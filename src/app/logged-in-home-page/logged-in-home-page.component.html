@@ -1,0 +1,28 @@
+<header>
+    <div class="left-header">
+        <a href="/loggedInHmPg">
+            <img src="img/unnamed.png" alt="zd">
+        </a>
+    </div>
+    <div class="right-header">
+        <a (click)="goToProfile()">
+            <img src="img/avatar.jpg" alt="">
+        </a>
+        <button id="log-Out" (click)="logOut()">Log Out</button>
+    </div>
+</header>
+<main>
+    <div class="boddy" >
+        <div class="user-info" *ngFor="let user of userArr">
+            <div class="user-infos">
+                <p> User Name: {{user.name}} </p>
+                <p> User mail: {{user.mail}} </p>
+                <p> 
+                    User Password: 
+                    {{'*'.repeat(user.password.length)}}
+                </p>    
+            </div>
+            <a  [routerLink]="['/detail', user.id]" [queryParams]="{ source: 'loggedInHmPg' }">See More</a>
+        </div>
+    </div>
+</main>

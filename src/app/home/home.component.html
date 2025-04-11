@@ -1,0 +1,72 @@
+<header [class.blur-background]="showLogIn">
+    <div class="left-header">
+        <a href=""> 
+            <img src="img/unnamed.png" alt="">
+        </a>
+    </div>
+    <div class="right-header">
+        <button id="log-In" (click)="showButton()">Log In</button>
+        <button id="reg" routerLink="/register-User">Register</button>
+    </div>
+</header>
+<main [class.blur-background]="showLogIn">
+    <div class="boddy" >
+        <div class="user-info" *ngFor="let user of userArr">
+            <div class="user-infos">
+                <p> User Name: {{user.name}} </p>
+                <p> User mail: {{user.mail}} </p>
+                <p> 
+                    User Password: {{'*'.repeat(user.password.length)}}
+                </p>    
+            </div>
+            <a  [routerLink]="['/detail', user.id]" [queryParams]="{ source: 'home' }">See More</a>
+        </div>
+    </div>
+</main>
+<div *ngIf="showLogIn" class="login-window" [formGroup]="logInForm">
+    <div class="lg-window">
+        <ng-template #loginContent>
+            <button class="back-to-hmpg" (click)="showButton()">
+                x
+            </button>
+            <h2>
+                Log In
+            </h2>
+            <label for="email-input"
+            [ngClass]="{
+                'default-state-reg': !mail.touched,
+                'invalid-state-reg': mail.touched && mail.invalid,
+                'valid-state-reg': mail.touched && mail.valid
+            }"
+            >Mail:</label>
+            <input type="email" id="email-input"  formControlName="mail" 
+            [ngClass]="{
+                'default-state': !mail.touched,
+                'invalid-state': mail.touched && mail.invalid,
+                'valid-state': mail.touched && mail.valid
+            }">
+            <label for="password"
+            [ngClass]="{
+                'default-state-reg': !password.touched,
+                'invalid-state-reg': password.touched && password.invalid,
+                'valid-state-reg': password.touched && password.valid
+            }"
+            >Password:</label>
+            <input type="password" id="password" formControlName="password" 
+            [ngClass]="{
+                'default-state': !password.touched,
+                'invalid-state': password.touched && password.invalid,
+                'valid-state': password.touched && password.valid
+            }">
+            <button class="register-btn" (click)="logInUser()">
+                Confirm
+            </button>     
+        </ng-template>
+        <div class="logged-in-successfully" *ngIf="isLoggedIn else loginContent" >  
+            <div>
+              <p>Successfully Logged In!</p>
+              <button class="nav-loghmp-btn" (click)="navToLoggedhmPg()">Log In</button>
+            </div>
+        </div>
+    </div>
+</div>

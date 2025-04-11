@@ -1,0 +1,24 @@
+.cont{
+    text-align: center;
+    margin: 30px 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    h1{
+        font-size: 35px;
+    }
+    p{
+        padding-top: 20px; 
+        font-size: 25px;
+    }
+    button{
+        cursor: pointer;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none; 
+        color: #0A7CFF;
+        &:hover{
+            transition: 0.3s;
+            background-color: #e0e0e0;
+        }
+    }
+}

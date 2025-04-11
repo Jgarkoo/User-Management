@@ -1,0 +1,55 @@
+<header>
+    <a (click)="goBack()">
+        <img src="img/unnamed.png" alt="">
+    </a>
+</header>
+<main>
+    <div class="boddy">
+        <div class="boddy-left">
+            <button (click)="goBack()">
+                &#8249;
+            </button>
+        </div>
+        <div class="boddy-right">
+            <div class="user-info" *ngIf="user">
+                <div class="user-infos">
+                    <p> User Name: {{user.name}} </p>
+                    <p> User mail: {{user.mail}} </p>
+                    <p> User Password: {{ '*'.repeat(user.password.length) }}
+                    
+                    </p>
+                </div>
+                <div class="edit-delete-butns">
+                    <button id="edit" *ngIf="isOwner" (click)="toggleEdit()">Edit</button>
+                    <button id="delete" *ngIf="isOwner" (click)="deleteUser()">Delete</button>
+                </div>
+            </div>
+            <form [formGroup]="cUserForm" *ngIf="isOwner && showEditForm" (ngSubmit)="submitEdit()">
+                <div class="registration">
+                    <div class="user-Div">
+                        <label for="user-name">
+                            User Name*
+                        </label>
+                        <input type="text" id="user-name" formControlName="name">    
+                    </div>
+                    <div class="mail-Div">
+                        <label for="mail">
+                            mail*
+                        </label>
+                        <input type="text" id="mail" formControlName="mail">    
+                    </div>
+                    <div class="passw-Div">
+                        <label for="passw">
+                            password*
+                        </label>
+                        <div class="password-input-span">
+                            <input [type]="showPassword ? 'text' : 'password'" id="passw" formControlName="password">
+                            <span (click)="togglePassword()" > {{showPassword? '🙈' : '👁️'}} </span>
+                        </div>
+                    </div>
+                    <button type="submit" [disabled]="!cUserForm.valid">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

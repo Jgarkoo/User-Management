@@ -1,0 +1,81 @@
+<header>
+    <a routerLink="/home">
+        <img src="img/unnamed.png" alt="">
+    </a>
+</header>
+<main>
+    <div class="boddy">
+        <ng-template #registerContent>
+            <h1>REGISTER</h1>
+            <form [formGroup]="regForm">
+                <div class="registration">
+                    <div class="user-Div">
+                        <label for="user-name"
+                        [ngClass]="{
+                            'default-state-reg': !name.touched,
+                            'invalid-state-reg': name.touched && name.invalid,
+                            'valid-state-reg': name.touched && name.valid
+                        }"
+                        >
+                            User Name*
+                        </label>
+                        <input type="text" id="user-name" formControlName="name"
+                        [ngClass]="{
+                            'default-state': !name.touched,
+                            'invalid-state': name.touched && name.invalid,
+                            'valid-state': name.touched && name.valid
+                        }" 
+                        >    
+                    </div>
+                    <div class="mail-Div">
+                        <label for="mail"
+                        [ngClass]="{
+                            'default-state-reg': !mail.touched,
+                            'invalid-state-reg': mail.touched && mail.invalid,
+                            'valid-state-reg': mail.touched && mail.valid
+                        }"
+                        >
+                            mail*
+                        </label>
+                        <input type="text" id="mail" formControlName="mail"
+                        [ngClass]="{
+                            'default-state': !mail.touched,
+                            'invalid-state': mail.touched && mail.invalid,
+                            'valid-state': mail.touched && mail.valid
+                        }"
+                        >    
+                    </div>
+                    <div class="passw-Div">
+                        <label for="passw" 
+                        [ngClass]="{
+                            'default-state-reg': !password.touched,
+                            'invalid-state-reg': password.touched && password.invalid,
+                            'valid-state-reg': password.touched && password.valid
+                        }"
+                        >
+                            password*
+                        </label>
+                        <input type="password" id="passw" formControlName="password" 
+                        [ngClass]="{
+                            'default-state': !password.touched,
+                            'invalid-state': password.touched && password.invalid,
+                            'valid-state': password.touched && password.valid
+                        }"
+                        >    
+                    </div>
+                </div>
+            </form>
+            <div class="conf-butn">
+                <button (click)="addUser()">
+                    confirm
+                </button> 
+            </div>
+        </ng-template>
+        <div *ngIf="successMessage else registerContent" class="success">
+            <p>
+                You have successfully registered!
+            </p>
+            <a href="/home"> submit </a>
+        </div>
+    </div>
+</main>

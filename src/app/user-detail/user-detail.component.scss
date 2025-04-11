@@ -1,0 +1,199 @@
+header{
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: solid  rgb(222, 218, 218);
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    a{
+        cursor: pointer;
+    }
+} 
+
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .boddy{
+        width: 100%;  
+        display: flex;
+        justify-content: flex-start;    
+        .boddy-left{
+            margin-top: 30px;
+            button{
+                font-size: 30px;
+                margin-left: 50px;
+                padding: 4px 18px 6px 18px;
+                border-style: none;
+                border-radius: 25px;
+                cursor: pointer;
+                background-color: white;
+                &:hover{
+                    color: white;
+                    background-color: black;
+                    transition: 0.3s;
+                }
+            }
+        }
+        .boddy-right{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .user-info{
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: 1px solid grey;
+                width: 35%;
+                margin-left: 30%;
+                border-radius: 15px;
+                background-color: white;  
+                box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+                .user-infos{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    p{
+                        font-size: 30px;
+                        margin: 20px 10px;
+                    }
+                }
+                .edit-delete-butns{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 40px;
+                    button{
+                        border-color: transparent;
+                        border-radius: 5px;
+                        color: white;
+                        margin: 10px 0px 10px 0px;
+                        padding: 10px 14px;
+                        cursor: pointer;
+                    }
+                    #edit{
+                        background-color: rgb(231, 174, 69);
+                        &:hover{
+                            transition: 0.3s;
+                            border-color: rgb(231, 174, 69);
+                            background-color: white;
+                            color: rgb(231, 174, 69);
+                        }
+                    }
+                    #delete{
+                        background-color: rgb(230, 0, 0);
+                        &:hover{
+                            transition: 0.3s;
+                            border-color: rgb(230, 0, 0);
+                            background-color: white;
+                            color: rgb(230, 0, 0);
+                        }
+                    }
+                }
+                
+            }
+            form{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border: 1px solid grey;
+                width: 30%;
+                margin-left: 32%;
+                border-radius: 15px;
+                background-color: white;  
+                box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+                .registration{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 10px;
+                        label{
+                            font-size: 14px;
+                        }
+                        input{
+                            font-size: 17px;
+                            width: 240px;
+                            height: 30px;
+                            border-radius: 5px;
+                            border: solid 1px;
+                        }
+                    }
+                    button{
+                        margin: 10px 0px 10px 0px;
+                        padding: 5px 16px;
+                        background-color: rgb(15, 255, 80);
+                        border-color: transparent;
+                        border-radius: 5px;
+                        color: white;
+                        cursor: pointer;
+                        &:hover{
+                            transition: 0.3s;
+                            border-color: rgb(15, 255, 80);
+                            background-color: white;
+                            color: rgb(15, 255, 80);
+                        }
+                    }
+                    .passw-Div{
+                        label{
+                            margin-left: 16px;
+                        }
+                        .password-input-span{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            margin-top: 0px;
+                            input{
+                                margin-left: 16px;
+                            }
+                            span{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px){
+    header{
+        img{
+            width: 120px;
+        }
+    }
+    main{
+        .boddy{  
+            .boddy-left{
+                button{
+                    font-size: 15px;
+                    margin-left: 10px;
+                    padding: 4px 12px 6px 12px;
+                }
+            }
+            .boddy-right{
+                .user-info{
+                    width: 85%;
+                    margin-left: 5%;
+                    overflow-wrap: anywhere;
+                }
+                form{
+                    margin-top: 20px;
+                    width: 85%;
+                    margin-left: 5%;
+                }
+            }
+        }
+   }
+}
+

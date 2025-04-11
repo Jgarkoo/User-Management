@@ -1,0 +1,44 @@
+{
+  "User": [
+    {
+      "id": "445b",
+      "name": "asdas",
+      "mail": "asdasdas@dasd.das",
+      "password": "saasdasdasd"
+    },
+    {
+      "id": "0cf0",
+      "name": "asasdas",
+      "mail": "asdasd@sadas.caas",
+      "password": "asasasdasd"
+    },
+    {
+      "id": "a94c",
+      "name": "luka",
+      "mail": "luka1234@dd.ss",
+      "password": "luka1234",
+      "role": "user"
+    },
+    {
+      "id": "admin123",
+      "name": "Admin",
+      "mail": "admin@tera.ge",
+      "password": "admin1234",
+      "role": "admin"
+    },
+    {
+      "id": "fe2f",
+      "name": "lukaa",
+      "mail": "luka12@tera.ge",
+      "password": "luka1221",
+      "role": "user"
+    },
+    {
+      "id": "af46",
+      "name": "lukka",
+      "mail": "luka123@ds.ge",
+      "password": "luka1233",
+      "role": "user"
+    }
+  ]
+}

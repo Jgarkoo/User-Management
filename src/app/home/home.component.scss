@@ -1,0 +1,255 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: solid  rgb(222, 218, 218);
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    .left-header{
+        padding-left: 20px;
+    }
+    .right-header{
+        padding-right: 20px;
+        display: flex;
+        gap: 20px;
+        button{
+            border-radius: 5px;
+            color: white;
+            background-color: rgb(67, 182, 75);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            &:hover{
+                transition: 0.2s;
+                background-color: rgb(67, 165, 73);
+            }
+        }
+    }
+}
+main{
+    width: 95%;
+    margin-left: 5%;
+    .boddy{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 30px;
+        .user-info{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid grey;
+            width: 30%;
+            border-radius: 15px;
+            background-color: white;  
+            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+            .user-infos{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                p{
+                    font-size: 30px;
+                    margin: 20px 10px 0px 10px;
+                }
+            }
+            a{
+                margin-top: 10px;
+                margin-bottom: 20px;
+                color: #0A7CFF;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.login-window{
+    position: absolute;
+    width: 440px;  
+    height: 300px;
+    border-width: 0;
+    border-radius: 15px;
+    background-color: white;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    border: 1px solid grey;    
+    .lg-window{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .back-to-hmpg{
+            border-style: none; 
+            background-color: white; 
+            font-size: 15px; 
+            cursor: pointer; 
+            margin: 15px 0px 0px 400px;
+        }  
+        h2{
+            position: relative;
+            left: 42%;
+        } 
+        label{
+            margin: 20px 0px 5px 20px;
+        } 
+        #email-input{
+            padding: 6px; 
+            margin-left: 20px; 
+            width: 88%;
+            border-radius: 10px;
+            border: solid 1px;
+        }
+        #password{
+            padding: 6px; 
+            margin-left: 20px; 
+            width: 88%;
+            border-radius: 10px;
+            border: solid 1px;
+            
+        }
+        .logged-in-successfully{
+            width: 100%;
+            div{
+                text-align: center;
+                margin-top: 60px;
+                p{
+                    font-size: 20px; 
+                    font-weight: bold; 
+                    margin-top: 20px;
+                }
+                .nav-loghmp-btn{
+                    margin: 100px 0px 0px 0px; 
+                    width: 90%; 
+                    padding: 5px;
+                    border-radius: 5px;
+                    border-style: none;
+                    color: white;
+                    background-color: #5D37F3;
+                    cursor: pointer;
+                    
+                }
+            } 
+        }
+        .register-btn{
+            margin: 35px 0px 0px 20px; 
+            width: 88%; 
+            padding: 5px;
+            border-radius: 5px;
+            border-style: none;
+            color: white;
+            background-color: #5D37F3;
+            cursor: pointer;
+            &:hover{
+                color:#5D37F3;
+                background-color: rgb(247, 243, 243);
+                transition: 0.3s;
+            }
+        }
+    }
+}
+
+.blur-background {
+    filter: blur(20px);
+    pointer-events: none; 
+    user-select: none;
+  }
+
+button.active {
+    border: 2px solid #000;
+}
+
+.default-state {
+    background-color: white;
+    border-color: grey;
+}
+
+.invalid-state {
+    border-color: red;
+    background-color:  #FAF2F3, 
+ }
+
+.valid-state {
+    background-color: #F8FFF8;
+    border-color: #14D81C; 
+}
+
+
+.default-state-reg {
+    color: black;
+}
+
+.invalid-state-reg {
+    color: red;
+ }
+
+.valid-state-reg {
+    color: black; 
+}
+
+
+@media (max-width: 1024px){
+    header{
+        position: sticky;
+        top: 0;
+        .left-header{
+            padding-left: 10px;
+            img{
+                width: 120px;
+            }
+        }
+        .right-header{
+            gap: 10px;
+            padding-right: 10px;
+            button{
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+        }
+    }
+    main{
+        .boddy{
+            flex-direction: column;
+            align-items: center;
+            .user-info{
+                width: 70%;
+                overflow-wrap: anywhere;
+                a{
+                    margin-top: 10px;
+                    left: 40%;
+                }
+            }
+        }
+    }
+    .login-window{
+        width: 300px;  
+        height: 300px;  
+        top: 30%;
+        .lg-window{
+            .back-to-hmpg{
+                margin: 15px 0px 0px 260px;
+            }  
+            h2{
+                left: 42%;
+            }
+            .logged-in-successfully{
+                width: 100%;
+                div{
+                    text-align: center;
+                    margin-top: 50px;
+                    p{
+                        font-size: 20px; 
+                        font-weight: bold; 
+                        margin-top: 20px;
+                    }
+                } 
+            }
+        }
+    }
+}
